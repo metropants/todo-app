@@ -32,6 +32,8 @@ public interface UserService extends UserDetailsService {
 
     UserResponse save(@NotNull AuthenticationRequest request);
 
+    Optional<User> getByUsername(@NotNull String username);
+
     Optional<UserResponse> findByUsername(@NotNull String username);
 
     List<UserResponse> findAll();

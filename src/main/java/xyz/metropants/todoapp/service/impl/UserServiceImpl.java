@@ -40,6 +40,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public Optional<xyz.metropants.todoapp.entity.User> getByUsername(@NotNull String username) {
+        return repository.findByUsername(username);
+    }
+
+    @Override
     public Optional<UserResponse> findByUsername(@NotNull String username) {
         return repository.findByUsername(username)
                 .map(MAPPER::map);

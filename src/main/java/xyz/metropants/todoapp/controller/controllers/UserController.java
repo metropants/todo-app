@@ -1,4 +1,4 @@
-package xyz.metropants.todoapp.controller;
+package xyz.metropants.todoapp.controller.controllers;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

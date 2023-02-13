@@ -8,6 +8,7 @@ import org.jetbrains.annotations.NotNull;
 import xyz.metropants.todoapp.enums.Role;
 
 import java.util.EnumSet;
+import java.util.HashSet;
 import java.util.Set;
 
 @Data
@@ -32,6 +33,9 @@ public class User {
     @CollectionTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"))
     @Column(nullable = false)
     private Set<Role> roles = EnumSet.of(Role.USER);
+
+    @OneToMany(mappedBy = "creator")
+    private Set<Todo> todos = new HashSet<>();
 
     public User(@NotNull String username, @NotNull String password) {
         this.username = username;

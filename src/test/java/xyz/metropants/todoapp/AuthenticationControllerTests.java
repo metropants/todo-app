@@ -12,9 +12,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-class AuthenticationTests {
+class AuthenticationControllerTests {
 
-    private static final String VALID_BODY = """
+    public static final String VALID_BODY = """
                         {
                             "username": "test",
                             "password": "password123"
@@ -31,7 +31,7 @@ class AuthenticationTests {
     }
 
     @Test
-    void invalidUsername() throws Exception {
+    void shouldBeInvalidUsername() throws Exception {
         String body = """
                         {
                             "username": "invalid_username",
